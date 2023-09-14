@@ -5,7 +5,7 @@ import requests as req
 from bs4 import BeautifulSoup as bs
 
 
-def check(array):
+def check_DNS(array):
     pattern = re.compile(r'^\d.*\d$')
     result = [item.text for item in array]
     result = [i for i in result if pattern.search(i)]
@@ -29,7 +29,7 @@ x = int(input('--: '))
 if x == 1:
     print('''\n1. Electro\n2. Shekan''')
     a = int(input('--: '))
-    DNSs = check(get_DNS(resources, a))
+    DNSs = check_DNS(get_DNS(resources, a))
     os.system(f'netsh interface ip set dns name="Wi-Fi" static {DNSs[0]}')
     os.system(f'netsh interface ip add dns name="Wi-Fi" {DNSs[1]} index=2')
 
