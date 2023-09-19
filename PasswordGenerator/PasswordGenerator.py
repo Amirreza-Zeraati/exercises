@@ -2,7 +2,7 @@ from random import shuffle, choice
 from string import ascii_letters, digits
 
 
-characters = list(ascii_letters + digits + "!@#$%^&*()")
+characters = list(ascii_letters + digits + "[]{}()*&^%$#@!~")
 
 
 def PasswordGenerator():
@@ -21,7 +21,7 @@ def SavePassword(path, detail, password):
 
 while True:
     password = PasswordGenerator()
-    print(password)
+    print("Your Password is : ", password)
     details = input('Enter Specific Details About Your Password : ')
     SavePassword('passwords.txt', details, password)
     opt = input('Generate Another Password ? [y/n]')
