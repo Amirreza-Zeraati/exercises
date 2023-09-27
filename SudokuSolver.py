@@ -2,9 +2,11 @@ from pprint import pprint
 
 
 def print_board(puzzle):
-    # finds the next row, col on the puzzle that's not filled yet --> rep with -1
-    # return row, col tuple; (None, None) if there is none
-    # keep in mind that we are using 0-8 for our indices
+    '''
+        finds the next row, col on the puzzle that's not filled yet --> rep with -1
+        return row, col tuple; (None, None) if there is none
+        keep in mind that we are using 0-8 for our indices
+    '''
     for r in range(9):
         for c in range(9):
             if puzzle[r][c] == -1:
@@ -13,8 +15,10 @@ def print_board(puzzle):
 
 
 def is_valid(puzzle, guess, row, col):
-    # figures out whether the guess at the row/col of the puzzle is a valid guess
-    # that number must not be repeated in the row, column, or 3x3 square that it appears in
+    '''
+        figures out whether the guess at the row/col of the puzzle is a valid guess
+        that number must not be repeated in the row, column, or 3x3 square that it appears in
+    '''
     # row
     row_vals = puzzle[row]
     if guess in row_vals:
@@ -34,8 +38,10 @@ def is_valid(puzzle, guess, row, col):
 
 
 def solve_sudoku(puzzle):
-    # solve sudoku using backtracking!
-    # our puzzle is a list of arrays, where each inner list is a row in puzzle
+    '''
+        solve sudoku using backtracking!
+        our puzzle is a list of arrays, where each inner list is a row in puzzle
+    '''
     row, col = print_board(puzzle)
     # if there's nowhere left, then we're done
     if row is None:
