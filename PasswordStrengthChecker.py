@@ -42,6 +42,7 @@ def check_password_strength():
         details = 'Your password is really strong'
 
     print('Your password have : ')
+    print(f'> {len(list(password)} characters -has to be 8 at least-')
     print(f'> {lower_count} lowercase letters')
     print(f'> {upper_count} uppercase letters')
     print(f'> {num_count} digits')
