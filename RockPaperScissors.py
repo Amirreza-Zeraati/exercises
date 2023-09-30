@@ -7,7 +7,7 @@ def playing_status():
     valid_responses = ['y', 'n']
     while True:
         try:
-            response = input('Do you want to play again?[y/n]: ')
+            response = input('Do you want to play again?[Y/N]: ')
             if response.lower() not in valid_responses:
                 raise ValueError('Y or N only')
 
