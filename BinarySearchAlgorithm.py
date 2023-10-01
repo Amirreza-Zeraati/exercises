@@ -16,6 +16,7 @@ def binary_search(array, x):
 
 def binary_search_recursive(array, first, last, x):
     # in recursive, the array have to be sorted first
+    # you can also use merge sort in my < exercises > repo
     array.sort()
     if len(array) == 0:
         return False
