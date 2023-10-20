@@ -10,14 +10,12 @@ def playing_status():
             response = input('Do you want to play again?[Y/N]: ')
             if response.lower() not in valid_responses:
                 raise ValueError('Y or N only')
-
             if response.lower() == 'y':
                 return True
             else:
                 os.system('cls' if os.name == 'nt' else 'clear')
                 print('Thanks for playing!')
                 exit()
-
         except ValueError as err:
             print(err)
 
@@ -28,20 +26,15 @@ def rps():
         os.system('cls' if os.name == 'nt' else 'clear')
         print('')
         print('Rock, Paper, Scissors - Shoot!')
-
         user_choice = input('Choose your weapon'
                             ' [R]ock, [P]aper, or [S]cissors: ')
-
         if not re.match("[SsRrPp]", user_choice):
             print('Please choose a letter:')
             print('[R]ock, [P]aper, or [S]cissors')
             continue
-
         print(f'\nYou chose: {user_choice}')
-
         choices = ['R', 'P', 'S']
         opp_choice = random.choice(choices)
-
         print(f'I chose: {opp_choice}')
 
         if opp_choice == user_choice.upper():
